@@ -117,7 +117,7 @@ int MeidaService::record_open_output(AVFormatContext *ic)
 	av_dict_set(&options, "reset_timestamps","1",0); 
 	av_dict_set(&options, "segment_format","mp4",0); 
 	av_dict_set(&options, "segment_time","60",0); 		
-	//av_dict_set(&options, "strftime","1",0); 			
+	av_dict_set(&options, "strftime","1",0); 			
 	av_dict_set(&options, "increment_tc ","1",0); 		
 
 	ret = avformat_write_header(outputContext, &options);

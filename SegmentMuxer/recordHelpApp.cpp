@@ -61,7 +61,9 @@ int main(int argc, char **argv)
 	}
  
 	//av_dump_format(i_fmt_ctx, 0, argv[1], 0);
-	service.record_set_path_fmt("c:/rec/my%d.mp4");
+	//按时间格式输出录制文件
+	char fmt[]="c:/rec/%Y-%m-%d %H-%M-%S.mp4";
+	service.record_set_path_fmt(fmt);
 	service.record_init_output(i_fmt_ctx);
 	AVPacket tmp_pkt;
 	while (1)
